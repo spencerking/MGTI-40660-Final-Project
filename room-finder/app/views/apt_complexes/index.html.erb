@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Apt Complexes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Street</th>
+      <th>Description</th>
+      <th>Floors</th>
+      <th>City</th>
+      <th>Company</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apt_complexes.each do |apt_complex| %>
+      <tr>
+        <td><%= apt_complex.street %></td>
+        <td><%= apt_complex.description %></td>
+        <td><%= apt_complex.floors %></td>
+        <td><%= apt_complex.City %></td>
+        <td><%= apt_complex.Company %></td>
+        <td><%= link_to 'Show', apt_complex %></td>
+        <td><%= link_to 'Edit', edit_apt_complex_path(apt_complex) %></td>
+        <td><%= link_to 'Destroy', apt_complex, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apt complex', new_apt_complex_path %>

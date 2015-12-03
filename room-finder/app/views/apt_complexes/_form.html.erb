@@ -1,0 +1,37 @@
+<%= form_for(@apt_complex) do |f| %>
+  <% if @apt_complex.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apt_complex.errors.count, "error") %> prohibited this apt_complex from being saved:</h2>
+
+      <ul>
+      <% @apt_complex.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :floors %><br>
+    <%= f.number_field :floors %>
+  </div>
+  <div class="field">
+    <%= f.label :City_id %><br>
+    <%= f.text_field :City_id %>
+  </div>
+  <div class="field">
+    <%= f.label :Company_id %><br>
+    <%= f.text_field :Company_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

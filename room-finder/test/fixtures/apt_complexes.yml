@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  street: MyString
+  description: MyText
+  floors: 1
+  City_id: 
+  Company_id: 
+
+two:
+  street: MyString
+  description: MyText
+  floors: 1
+  City_id: 
+  Company_id: 
