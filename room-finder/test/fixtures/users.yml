@@ -8,6 +8,8 @@ one:
   Company_id: 
   City_id: 
   Apartment_id: 
+  username: MyString
+  password: MyString
 
 two:
   name: MyString
@@ -17,3 +19,5 @@ two:
   Company_id: 
   City_id: 
   Apartment_id: 
+  username: MyString
+  password: MyString

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203151422) do
+ActiveRecord::Schema.define(version: 20151203154226) do
 
   create_table "apartments", force: :cascade do |t|
     t.integer  "floor"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20151203151422) do
     t.integer  "Apartment_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "username"
+    t.string   "password"
   end
 
   add_index "users", ["Apartment_id"], name: "index_users_on_Apartment_id"

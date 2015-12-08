@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :Apt_complex_id %><br>
-    <%= f.text_field :Apt_complex_id %>
+    <%= f.collection_select :Apt_complex_id, AptComplex.all, :id, :name, prompt: 'Please select an apartment complex...'%>
   </div>
   <div class="actions">
     <%= f.submit %>
