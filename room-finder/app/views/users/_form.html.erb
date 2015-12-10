@@ -29,15 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :Company_id %><br>
-    <%= f.collection_select :Company_id, City.all, :id, :name, prompt: 'Please select a company...'%>
+    <%= f.collection_select :Company_id, Company.all, :id, :name, prompt: 'Please select a company...'%>
   </div>
   <div class="field">
     <%= f.label :City_id %><br>
     <%= f.collection_select :City_id, City.all, :id, :name, prompt: 'Please select a city...'%>
   </div>
   <div class="field">
-    <%= f.label :Apartment_id %><br>
-    <%= f.collection_select :Apartment_id, Apartment.all, :id, :apt_name, prompt: 'Please select an apartment...'%>
+    <%= f.label :Apt_complex_id %><br>
+    <%= f.collection_select :Apt_complex_id, AptComplex.all, :id, :name, prompt: 'Please select an apartment complex...'%>
   </div>
   <div class="field">
     <%= f.label :username %><br>
