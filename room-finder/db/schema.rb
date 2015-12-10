@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203154226) do
+ActiveRecord::Schema.define(version: 20151210145846) do
 
   create_table "apartments", force: :cascade do |t|
     t.integer  "floor"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151203154226) do
     t.integer  "Company_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
   end
 
   add_index "apt_complexes", ["City_id"], name: "index_apt_complexes_on_City_id"
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20151203154226) do
     t.integer  "population"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "companies", force: :cascade do |t|

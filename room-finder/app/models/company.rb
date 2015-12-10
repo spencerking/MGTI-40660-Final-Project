@@ -4,5 +4,10 @@ class Company < ActiveRecord::Base
   has_many :Apt_complexes
 
   validates :name, presence: {message: 'must be present'}
-  validates :city_id, presence: {message: 'must be selected'}
+  validates :City_id, presence: {message: 'must be selected'}
+
+  def to_s
+  		name
+  end
+
 end

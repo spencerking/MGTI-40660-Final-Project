@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Street</th>
       <th>Description</th>
       <th>Floors</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @apt_complexes.each do |apt_complex| %>
       <tr>
+        <td><%= apt_complex.name %></td>
         <td><%= apt_complex.street %></td>
         <td><%= apt_complex.description %></td>
         <td><%= apt_complex.floors %></td>

@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
   <div class="field">
     <%= f.label :street %><br>
     <%= f.text_field :street %>
@@ -25,7 +28,7 @@
   </div>
   <div class="field">
     <%= f.label :City_id %><br>
-    <%= f.collection_select :City_id, Company.all, :id, :name, prompt: 'Please select a city...'%>
+    <%= f.collection_select :City_id, City.all, :id, :name, prompt: 'Please select a city...'%>
   </div>
   <div class="field">
     <%= f.label :Company_id %><br>

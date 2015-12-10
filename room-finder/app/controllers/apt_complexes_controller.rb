@@ -69,6 +69,6 @@ class AptComplexesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apt_complex_params
-      params.require(:apt_complex).permit(:street, :description, :floors, :City_id, :Company_id)
+      params.require(:apt_complex).permit(:name, :street, :description, :floors, :City_id, :Company_id)
     end
 end

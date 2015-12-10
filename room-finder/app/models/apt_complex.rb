@@ -3,6 +3,11 @@ class AptComplex < ActiveRecord::Base
   belongs_to :Company
   has_many :Apartments
 
-  validates :street, presence: {message: 'must be present'}
-  validates :city_id, :company_id, presence: {message: 'must be selected'}
+  validates :name, :street, presence: {message: 'must be present'}
+  validates :City_id, presence: {message: 'must be selected'}
+
+  def to_s
+  	name
+  end
+
 end

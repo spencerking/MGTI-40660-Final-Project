@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :Apartment_id %><br>
-    <%= f.collection_select :Apartment_id, Apartment.all, :id, :name, prompt: 'Please select an apartment...'%>
+    <%= f.collection_select :Apartment_id, Apartment.all, :id, :apt_name, prompt: 'Please select an apartment...'%>
   </div>
   <div class="field">
     <%= f.label :username %><br>
