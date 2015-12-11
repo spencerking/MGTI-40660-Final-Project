@@ -1,4 +1,4 @@
-class AptComplexesController < ApplicationController
+class AptComplexesController < ProtectedController
   before_action :set_apt_complex, only: [:show, :edit, :update, :destroy]
 
   # GET /apt_complexes

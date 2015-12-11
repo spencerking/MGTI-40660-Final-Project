@@ -1,4 +1,4 @@
-class ApartmentsController < ApplicationController
+class ApartmentsController < ProtectedController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
 
   # GET /apartments

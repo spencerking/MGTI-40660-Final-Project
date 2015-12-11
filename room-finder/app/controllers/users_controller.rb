@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+class UsersController < ProtectedController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:new]
 
   # GET /users
   # GET /users.json
