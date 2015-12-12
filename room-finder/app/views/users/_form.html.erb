@@ -1,53 +1,69 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% if @display_page == 1%>
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :age %><br>
+      <%= f.number_field :age %>
+    </div>
+    <div class="field">
+      <%= f.label :gender %><br>
+      <%= f.text_field :gender %>
+    </div>
+
+
+    <% if @adminDisplay == 1 %>
+
+      <div class="field">
+        <%= f.label :isAdmin %><br>
+        <%= f.check_box :isAdmin %>
+      </div>
+
+    <% end %>
+
+
+
+
+    <div class="field">
+      <%= f.label :Company_id %><br>
+      <%= f.collection_select :Company_id, Company.all, :id, :name, prompt: 'Please select a company...'%>
+    </div>
+    <div class="field">
+      <%= f.label :City_id %><br>
+      <%= f.collection_select :City_id, City.all, :id, :name, prompt: 'Please select a city...'%>
+    </div>
+    <div class="field">
+      <%= f.label :Apt_complex_id %><br>
+      <%= f.collection_select :Apt_complex_id, AptComplex.all, :id, :name, prompt: 'Please select an apartment complex...'%>
+    </div>
+    <div class="field">
+      <%= f.label :username %><br>
+      <%= f.text_field :username %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.text_field :password %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :isAdmin %><br>
-    <%= f.check_box :isAdmin %>
-  </div>
-  <div class="field">
-    <%= f.label :Company_id %><br>
-    <%= f.collection_select :Company_id, Company.all, :id, :name, prompt: 'Please select a company...'%>
-  </div>
-  <div class="field">
-    <%= f.label :City_id %><br>
-    <%= f.collection_select :City_id, City.all, :id, :name, prompt: 'Please select a city...'%>
-  </div>
-  <div class="field">
-    <%= f.label :Apt_complex_id %><br>
-    <%= f.collection_select :Apt_complex_id, AptComplex.all, :id, :name, prompt: 'Please select an apartment complex...'%>
-  </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <% else %>
+    <h2>You cannot edit other users' information</h2>
+
 <% end %>

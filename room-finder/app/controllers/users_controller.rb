@@ -1,6 +1,7 @@
 class UsersController < ProtectedController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, except: [:new]
+  before_action :require_login, except: [:new, :create, :update]
+  before_action :check_admin, except: [:edit]
 
   # GET /users
   # GET /users.json
@@ -16,10 +17,25 @@ class UsersController < ProtectedController
   # GET /users/new
   def new
     @user = User.new
+    adminDisplay = 0
+    @display_page = 1
+    if session[:user_id] != nil
+      @curr_user = User.find_by_id(session[:user_id])
+      if @curr_user.isAdmin == true
+        @adminDisplay = 1
+      else
+        @adminDisplay = 2
+      end
+    end
   end
 
   # GET /users/1/edit
   def edit
+    curr_user = User.find_by_id(session[:user_id])
+    @display_page = 0
+    if (session[:user_id] and @user.id == curr_user.id) or (!session[:user_id]) or (curr_user.isAdmin)
+      @display_page = 1
+    end
   end
 
   # POST /users
