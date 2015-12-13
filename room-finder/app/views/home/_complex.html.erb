@@ -1,0 +1,22 @@
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Gender</th>
+			<th>City</th>
+			<th>Company</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @complex.Users.each do |user| %> 
+			<tr>
+				<td><%= user.name %></td>
+				<td><%= user.age %></td>
+				<td><%= user.gender %></td>
+				<td><%= user.City %></td>
+				<td><%= user.Company %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

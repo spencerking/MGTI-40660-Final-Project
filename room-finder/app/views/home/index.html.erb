@@ -1,4 +1,24 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="primary">
+	<% if params[:which_render] == '1' %>
+		<h2>People you work with</h2>
+		<%= render 'home/company' %>
+	<% elsif params[:which_render] == '2' %>
+		<h2>People in your city</h2>
+		<%= render 'home/city' %>
+	<% elsif params[:which_render] == '3' %>
+		<h2>People sharing your apartment complex</h2>
+		<%= render 'home/complex' %>
+	<% else %>
+		<h2>Select a search option in the sidebar </h2>
+	<% end %>
+	<br>
+	<%= link_to 'Edit User Information', edit_user_path(@user) %>
+</div>
 
-<%= link_to 'Edit User Information', edit_user_path(@user) %>
+<div id="sidebar">
+	<ul>
+		<li><%= link_to 'Find friends by company', :which_render => 1 %></li>
+		<li><%= link_to 'Find friends by city', :which_render => 2 %></li>
+		<li><%= link_to 'Find friends by complex', :which_render => 3 %></li>
+	</ul>
+</div>

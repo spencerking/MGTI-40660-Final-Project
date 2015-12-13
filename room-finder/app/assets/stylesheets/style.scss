@@ -1,0 +1,13 @@
+header { background-color: #006600; color:#fff; padding:20px; text-align:center; font-size:40px}
+main {width: 100%; float: left}
+div#primary {width: 70%; margin-top: 10px; float:left}
+div#sidebar {background-color: #99ccff; width: 25%; float:right; margin-top: 10px; padding:6px}
+div#sidebar li { list-style: none; font-size: 1.3em; margin-bottom: 10px}
+footer {float: left; width: 100%; text-align: center; border-top: thin solid #000; margin-top: 10px}
+
+div#primary table{border:thin solid #ececec; width:95%; border-spacing:0px}
+div#primary table th{background-color:#00cc00; color:#fff; text-align:left}
+div#primary table th, div#body table td{padding:4px}
+div#primary table tr:nth-child(even) {background: #ececec}
+
+div#primary_login {text-align:center}
